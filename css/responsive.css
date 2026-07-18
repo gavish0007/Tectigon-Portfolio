@@ -1,58 +1,874 @@
-/* Responsive rules */
+/* =======================================================
+   TECTIGON — RESPONSIVE CSS
+   Breakpoints:
+     1024px  → Small laptops / large tablets (landscape)
+      768px  → Tablets (portrait)
+      480px  → Large phones
+      360px  → Small phones
+======================================================= */
 
-@media (max-width: 900px) {
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-grid { grid-template-columns: 1fr; }
-}
+/* =====================================================
+   1024px — SMALL LAPTOPS / LARGE TABLETS LANDSCAPE
+===================================================== */
+@media (max-width: 1024px) {
 
-@media (max-width: 720px) {
-  .nav-links {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--ink-0);
-    border-bottom: 1px solid var(--line);
-    flex-direction: column;
-    gap: 0;
-    padding: 8px 32px 20px;
-    display: none;
+  h1 {
+    font-size: 3.2rem;
   }
 
-  .nav-links.open { display: flex; }
+  h2 {
+    font-size: 2.2rem;
+  }
 
-  .nav-links a {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
+  .container {
+    width: 94%;
+  }
+
+  /* Navbar */
+  .navbar {
+    height: 76px;
+  }
+
+  /* Hero */
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 3.4rem;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  /* About grid */
+  .about-grid {
+    gap: 50px;
+  }
+
+  /* Why grid */
+  .why-grid {
+    gap: 50px;
+  }
+
+  /* Timeline */
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Portfolio */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Team */
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Leader card */
+  .leader-card {
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+  }
+
+  /* Footer */
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+
+/* =====================================================
+   768px — TABLETS (PORTRAIT)
+===================================================== */
+@media (max-width: 768px) {
+
+  /* ── Base ── */
+  h1 {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  /* ── Navbar ── */
+  header {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar {
+    height: 68px;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 16px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    z-index: 9999;
+    list-style: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
     width: 100%;
   }
 
-  .nav-toggle {
+  .nav-links a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: .3s;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .hero-visual {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .float-1 {
+    right: -10px;
+  }
+
+  .float-2 {
+    left: -10px;
+  }
+
+  /* ── Page Hero ── */
+  .page-hero {
+    padding: 130px 0 80px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  /* ── Web Hero (websites subpage) ── */
+  .web-hero {
+    padding: 130px 0 80px;
+  }
+
+  .web-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .web-hero .hero-buttons {
+    justify-content: center;
+  }
+
+  /* ── Trust strip ── */
+  .logo-strip {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .company {
+    font-size: 1.1rem;
+  }
+
+  /* ── About preview ── */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .mock-screen {
+    height: 260px;
+  }
+
+  /* ── Services ── */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* ── Projects ── */
+  .project-list {
+    gap: 36px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .project-card:nth-child(even) .project-content {
+    order: 1;
+  }
+
+  .project-card:nth-child(even) .project-image {
+    order: 2;
+  }
+
+  .project-image {
+    height: 240px;
+  }
+
+  .project-content h3 {
+    font-size: 1.6rem;
+  }
+
+  /* ── Featured projects grid (portfolio.html) ── */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* ── Why grid ── */
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* ── Company story ── */
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* ── Mission ── */
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .timeline-item {
+    padding: 24px;
+  }
+
+  /* ── Portfolio hub ── */
+  .portfolio-hub {
+    padding: 80px 0;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .portfolio-category {
+    padding: 32px;
+  }
+
+  /* ── Case study ── */
+  .case-study-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .case-content h3 {
+    font-size: 2rem;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Web stats ── */
+  .web-stats {
+    padding: 50px 0;
+  }
+
+  /* ── Leader card ── */
+  .leader-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .leader-image img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* ── Team grid ── */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* ── Culture box ── */
+  .culture-box {
+    padding: 48px 28px;
+  }
+
+  /* ── Contact ── */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* ── CTA card ── */
+  .cta-section .card {
+    padding: 48px 28px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 60px 0 28px;
+    margin-top: 60px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-brand h2 {
+    font-size: 1.6rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+
+/* =====================================================
+   480px — LARGE PHONES
+===================================================== */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 2.1rem;
+    letter-spacing: -.8px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  .container {
+    width: 91%;
+  }
+
+  /* ── Navbar ── */
+  .logo span {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding-top: 90px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .stat h2 {
+    font-size: 1.9rem;
+  }
+
+  .float-1,
+  .float-2 {
+    display: none;
+  }
+
+  /* ── Page / Web Hero ── */
+  .page-hero {
+    padding: 110px 0 64px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .web-hero {
+    padding: 110px 0 64px;
+  }
+
+  .web-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    font-size: .8rem;
+    padding: 6px 14px;
+  }
+
+  /* ── Section title ── */
+  .section-title h2 {
+    font-size: 1.75rem;
+    margin-top: 12px;
+  }
+
+  .section-title p {
+    font-size: .95rem;
+    margin-top: 14px;
+  }
+
+  /* ── Services ── */
+  .service-card {
+    padding: 28px;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+  }
+
+  /* ── About ── */
+  .about-image {
+    padding: 20px;
+  }
+
+  .mock-screen {
+    height: 200px;
+  }
+
+  .about-list div {
+    font-size: .95rem;
+  }
+
+  .check {
+    width: 28px;
+    height: 28px;
+    font-size: .9rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Projects ── */
+  .project-image {
+    height: 200px;
+  }
+
+  .project-content h3 {
+    font-size: 1.4rem;
+    margin: 12px 0;
+  }
+
+  .project-content p {
+    font-size: .95rem;
+  }
+
+  .tech-stack span {
+    font-size: .8rem;
+    padding: 7px 13px;
+  }
+
+  /* ── Stats grid ── */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 28px 20px;
+  }
+
+  .stat-card h2 {
+    font-size: 2rem;
+  }
+
+  /* ── Why / features ── */
+  .feature {
+    padding: 20px;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item h3 {
+    font-size: 2rem;
+  }
+
+  /* ── Portfolio hub ── */
+  .portfolio-category {
+    padding: 28px;
+  }
+
+  .portfolio-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .portfolio-category h3 {
+    font-size: 1.25rem;
+  }
+
+  /* ── Case study ── */
+  .case-content h3 {
+    font-size: 1.6rem;
+  }
+
+  /* ── Team ── */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .team-card {
+    padding: 20px 14px;
+  }
+
+  .team-card img {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* ── Contact form ── */
+  .contact-form {
+    padding: 28px 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 13px 14px;
+    font-size: .95rem;
+  }
+
+  /* ── Info card ── */
+  .info-card {
+    padding: 20px;
+  }
+
+  /* ── CTA ── */
+  .cta-section .card {
+    padding: 36px 22px;
+  }
+
+  .cta-section h2 {
+    font-size: 1.75rem;
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 50px 0 24px;
+    margin-top: 40px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .footer-brand h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer-links h4 {
+    font-size: .95rem;
+  }
+
+  /* ── Scroll top btn ── */
+  #topBtn {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  /* ── Progress bar stays full width ── */
+  .progress-bar {
+    height: 3px;
+  }
+
+  /* ── Case study image ── */
+  .case-image img {
+    border-radius: 16px;
+  }
+
+  /* ── Dashboard card ── */
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  /* ── Culture ── */
+  .culture-box {
+    padding: 36px 20px;
+  }
+
+  .culture-box h2 {
+    font-size: 1.75rem;
+  }
+
+  /* ── Leader card ── */
+  .leader-card {
+    padding: 28px 20px;
+  }
+}
+
+
+/* =====================================================
+   360px — SMALL PHONES
+===================================================== */
+@media (max-width: 360px) {
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+
+  .container {
+    width: 93%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.85rem;
+  }
+
+  .page-hero h1,
+  .web-hero h1 {
+    font-size: 1.85rem;
+  }
+
+  /* Single column everything */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tech-stack {
+    gap: 8px;
+  }
+
+  .tech-stack span {
+    font-size: .78rem;
+    padding: 6px 11px;
+  }
+
+  .portfolio-category {
+    padding: 22px 18px;
+  }
+
+  .cta-section .card {
+    padding: 28px 16px;
+  }
+
+  .contact-form {
+    padding: 22px 16px;
+  }
+}
+
+
+/* =====================================================
+   UTILITIES — ALL BREAKPOINTS
+===================================================== */
+
+/* Prevent horizontal overflow everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make float cards not overflow on mobile */
+@media (max-width: 768px) {
+  .float-card {
+    position: static;
+    margin-top: 16px;
+    animation: none;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 48px;
+    padding: 14px 28px;
+  }
+
+  .nav-links a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .portfolio-category span {
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    color: var(--text-hi);
-    font-size: 1.1rem;
-    cursor: pointer;
   }
+}
 
-  .cat-grid { grid-template-columns: 1fr; }
-
-  .hero { padding: 64px 0 40px; }
-
-  .section-head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .site-footer {
-    flex-direction: column;
-    gap: 8px;
+/* Smooth scrolling on iOS */
+@media (max-width: 768px) {
+  html {
+    -webkit-overflow-scrolling: touch;
   }
 }
