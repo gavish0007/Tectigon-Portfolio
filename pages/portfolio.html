@@ -2,412 +2,535 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Portfolio | Tectigon</title>
-
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
+  <style>
+    /* ── Portfolio Hub ── */
+    .portfolio-hub {
+      padding: 100px 0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 64px;
+    }
+
+    .portfolio-category {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+      display: block;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-category::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+
+    .portfolio-category:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: #d0e0ff;
+    }
+
+    .portfolio-category:hover::before {
+      transform: scaleX(1);
+    }
+
+    .portfolio-icon {
+      font-size: 2.4rem;
+      margin-bottom: 18px;
+    }
+
+    .portfolio-category h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .portfolio-category p {
+      color: #666;
+      font-size: .95rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .portfolio-category span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: .9rem;
+      transition: gap .2s;
+    }
+
+    .portfolio-category:hover span {
+      gap: 10px;
+    }
+
+    .portfolio-category:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      max-width: 500px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ── Featured Projects ── */
+    .featured-projects {
+      padding: 100px 0;
+      background: #f8fbff;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(37, 99, 235, .1);
+    }
+
+    .project-thumb-img {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb-img .proj-url {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      opacity: .5;
+      font-family: monospace;
+    }
+
+    .t1 {
+      background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+    }
+
+    .t2 {
+      background: linear-gradient(135deg, #F0FDFF, #CFFAFE);
+    }
+
+    .t3 {
+      background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+    }
+
+    .t4 {
+      background: linear-gradient(135deg, #F0FFF4, #DCFCE7);
+    }
+
+    .t5 {
+      background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
+    }
+
+    .project-info {
+      padding: 26px;
+    }
+
+    .project-info .proj-cat {
+      color: var(--primary);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .project-info h3 {
+      font-size: 1.2rem;
+      margin: 10px 0 8px;
+      color: var(--dark);
+    }
+
+    .project-info p {
+      color: #666;
+      font-size: .9rem;
+      line-height: 1.65;
+      margin: 0 0 16px;
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .proj-tag {
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(37, 99, 235, .07);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, .12);
+    }
+
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      transition: gap .2s;
+    }
+
+    .proj-link:hover {
+      gap: 9px;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .75rem;
+      font-weight: 700;
+      background: rgba(22, 163, 74, .08);
+      color: #16A34A;
+      border: 1px solid rgba(22, 163, 74, .15);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-left: 10px;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #16A34A;
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 100px 0;
+    }
+
+    .cta-section .card {
+      padding: 70px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      margin-bottom: 14px;
+    }
+
+    .cta-section p {
+      margin-bottom: 0;
+    }
+
+    .cta-section a {
+      margin-top: 32px;
+      display: inline-block;
+    }
+  </style>
 </head>
 
 <body>
   <div class="progress-bar"></div>
-  <section class="services reveal"></section>
-  <button id="topBtn">
+  <button id="topBtn">↑</button>
 
-    ↑
-
-  </button>
   <header>
-
     <div class="container navbar">
-
       <a href="../index.html" class="logo">
-
-        <img src="../assets/logo.jpeg">
-
+        <img src="../assets/logo.jpeg" alt="Tectigon">
         <span>TECTIGON</span>
-
       </a>
-
       <ul class="nav-links">
-
         <li><a href="../index.html">Home</a></li>
-
         <li><a href="about.html">About</a></li>
-
         <li><a href="services.html">Services</a></li>
-
         <li><a href="portfolio.html" class="active">Portfolio</a></li>
-
         <li><a href="team.html">Team</a></li>
-
         <li><a href="contact.html">Contact</a></li>
-
       </ul>
-
       <div class="nav-btn">
-
-        <a href="contact.html" class="btn btn-primary">
-
-          Start Project
-
-        </a>
-
+        <a href="contact.html" class="btn btn-primary">Start Project</a>
       </div>
-
     </div>
-
   </header>
 
+  <!-- PAGE HERO -->
   <section class="page-hero">
-
     <div class="container">
-
-      <span class="badge">
-
-        OUR WORK
-
-      </span>
-
-      <h1>
-
-        Solutions Across Every Platform
-
-      </h1>
-
-      <p>
-
-        Explore our work across websites,
-        mobile applications,
-        enterprise software,
-        and intelligent business solutions.
-
+      <span class="badge">OUR WORK</span>
+      <h1>Solutions Across Every Platform</h1>
+      <p>Explore our work across websites, mobile applications, enterprise software, and intelligent business solutions.
       </p>
-
     </div>
-
   </section>
 
+  <!-- PORTFOLIO CATEGORIES -->
   <section class="portfolio-hub">
-
     <div class="container">
-
-      <div class="section-title">
-
-        <span>
-
-          PORTFOLIO CATEGORIES
-
-        </span>
-
-        <h2>
-
-          Explore By Expertise
-
-        </h2>
-
-        <p>
-
-          Every category contains dedicated projects,
-          technologies,
-          and case studies.
-
-        </p>
-
+      <div class="section-title reveal">
+        <span>PORTFOLIO CATEGORIES</span>
+        <h2>Explore By Expertise</h2>
+        <p>Every category contains dedicated projects, technologies, and case studies.</p>
       </div>
-
       <div class="portfolio-grid">
-
-        <a href="portfolio/websites-webapps.html" class="portfolio-category">
-
+        <a href="portfolio/websites-webapps.html" class="portfolio-category reveal">
           <div class="portfolio-icon">💻</div>
-
           <h3>Websites & Web Apps</h3>
-
-          <p>
-
-            Marketing websites,
-            dashboards,
-            SaaS products,
-            admin panels.
-
-          </p>
-
-          <span>
-
-            Explore →
-
-          </span>
-
+          <p>Marketing websites, dashboards, SaaS products, admin panels and enterprise portals built for scale.</p>
+          <span>Explore Projects →</span>
         </a>
-
-        <a href="portfolio/android-apps.html" class="portfolio-category">
-
-          <div class="portfolio-icon">
-
-            📱
-
-          </div>
-
-          <h3>
-
-            Android Apps
-
-          </h3>
-
-          <p>
-
-            Native Android
-            applications
-            and business apps.
-
-          </p>
-
-          <span>
-
-            Explore →
-
-          </span>
-
+        <a href="portfolio/android-apps.html" class="portfolio-category reveal">
+          <div class="portfolio-icon">📱</div>
+          <h3>Android Apps</h3>
+          <p>Native Android applications and business apps — from concept to Play Store release.</p>
+          <span>Explore Projects →</span>
         </a>
-
-        <a href="portfolio/ios-apps.html" class="portfolio-category">
-
-          <div class="portfolio-icon">
-
-            🍎
-
-          </div>
-
-          <h3>
-
-            iOS Apps
-
-          </h3>
-
-          <p>
-
-            Swift &
-            cross-platform
-            applications.
-
-          </p>
-
-          <span>
-
-            Explore →
-
-          </span>
-
+        <a href="portfolio/ios-apps.html" class="portfolio-category reveal">
+          <div class="portfolio-icon">🍎</div>
+          <h3>iOS Apps</h3>
+          <p>Swift and cross-platform iOS applications designed for App Store approval and long-term support.</p>
+          <span>Explore Projects →</span>
         </a>
-
-        <a href="portfolio/software-integrations.html" class="portfolio-category">
-
-          <div class="portfolio-icon">
-
-            🔗
-
-          </div>
-
-          <h3>
-
-            Software Integrations
-
-          </h3>
-
-          <p>
-
-            API integrations,
-            CRM,
-            ERP,
-            Automation.
-
-          </p>
-
-          <span>
-
-            Explore →
-
-          </span>
-
+        <a href="portfolio/software-integrations.html" class="portfolio-category reveal">
+          <div class="portfolio-icon">🔗</div>
+          <h3>Software Integrations</h3>
+          <p>API integrations, CRM, ERP, and automation workflows that connect your business tools seamlessly.</p>
+          <span>Explore Projects →</span>
         </a>
-
-        <a href="portfolio/softwares.html" class="portfolio-category">
-
-          <div class="portfolio-icon">
-
-            ⚙
-
-          </div>
-
-          <h3>
-
-            Custom Softwares
-
-          </h3>
-
-          <p>
-
-            Desktop software,
-            management systems,
-            automation tools.
-
-          </p>
-
-          <span>
-
-            Explore →
-
-          </span>
-
+        <a href="portfolio/softwares.html" class="portfolio-category reveal">
+          <div class="portfolio-icon">⚙️</div>
+          <h3>Custom Softwares</h3>
+          <p>Desktop software, management systems, and automation tools engineered around your exact workflow.</p>
+          <span>Explore Projects →</span>
         </a>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- ================= Featured Projects ================= -->
-
+  <!-- FEATURED PROJECTS -->
   <section class="featured-projects">
-
     <div class="container">
-
-      <div class="section-title">
-
+      <div class="section-title reveal">
         <span>FEATURED PROJECTS</span>
-
         <h2>Some of Our Best Work</h2>
-
-        <p>
-          A glimpse into enterprise solutions, business applications,
-          and digital platforms we've designed and developed.
-        </p>
-
+        <p>A selection of live websites, enterprise platforms, and digital products we've designed and built.</p>
       </div>
-
       <div class="projects-grid">
 
-        <div class="project-card">
-
-          <img src="../assets/portfolio/project1.jpg" alt="Employee Portal">
-
+        <!-- Hello Monday -->
+        <div class="project-card reveal">
+          <div class="project-thumb-img t1">
+            🎨
+            <span class="proj-url">hellomonday.com</span>
+          </div>
           <div class="project-info">
+            <span class="proj-cat">Creative Studio Website</span>
+            <h3>Hello Monday <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
+            <p>A stunning creative studio website for a New York & Copenhagen-based digital agency — handcrafted digital
+              products, brands, and experiences.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Web Design</span>
+              <span class="proj-tag">Branding</span>
+              <span class="proj-tag">Animation</span>
+            </div>
+            <a href="https://www.hellomonday.com" target="_blank" rel="noopener" class="proj-link">Visit Website →</a>
+          </div>
+        </div>
 
-            <span>Enterprise Software</span>
+        <!-- Who Is Guilty -->
+        <div class="project-card reveal">
+          <div class="project-thumb-img t2">
+            ⚖️
+            <span class="proj-url">whoisguilty.com</span>
+          </div>
+          <div class="project-info">
+            <span class="proj-cat">Interactive Web Experience</span>
+            <h3>Who Is Guilty <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
+            <p>An interactive story landing page and guide for designers and developers to collaborate better, reduce
+              errors, and catch the same creative vibe.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Interactive</span>
+              <span class="proj-tag">UI/UX</span>
+              <span class="proj-tag">Next.js</span>
+            </div>
+            <a href="https://whoisguilty.com" target="_blank" rel="noopener" class="proj-link">Visit Website →</a>
+          </div>
+        </div>
 
+        <!-- FlyRemit -->
+        <div class="project-card reveal">
+          <div class="project-thumb-img t3">
+            ✈️
+            <span class="proj-url">flyremit.com</span>
+          </div>
+          <div class="project-info">
+            <span class="proj-cat">Fintech Platform</span>
+            <h3>FlyRemit <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
+            <p>India's first 100% digital outward remittance platform — live FX rates, 600+ global partners, zero
+              paperwork. Built for tour cost, education & MICE.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Fintech</span>
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Payment API</span>
+            </div>
+            <a href="https://flyremit.com" target="_blank" rel="noopener" class="proj-link">Visit Website →</a>
+          </div>
+        </div>
+
+        <!-- Employee Portal -->
+        <div class="project-card reveal">
+          <div class="project-thumb-img t4">🖥️</div>
+          <div class="project-info">
+            <span class="proj-cat">Enterprise Software</span>
             <h3>Employee Management Portal</h3>
-
-            <p>
-              HRMS platform with attendance, leave management,
-              analytics and reporting.
-            </p>
-
-            <a href="portfolio/websites-webapps.html">
-              View Case Study →
-            </a>
-
+            <p>HRMS platform with attendance tracking, leave management, analytics and reporting for 500+ employees.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Node.js</span>
+              <span class="proj-tag">MongoDB</span>
+            </div>
+            <a href="portfolio/websites-webapps.html" class="proj-link">View Case Study →</a>
           </div>
-
         </div>
 
-        <div class="project-card">
-
-          <img src="../assets/portfolio/project2.jpg" alt="CRM">
-
+        <!-- CRM -->
+        <div class="project-card reveal">
+          <div class="project-thumb-img t5">📊</div>
           <div class="project-info">
-
-            <span>CRM Dashboard</span>
-
+            <span class="proj-cat">CRM Dashboard</span>
             <h3>Sales & CRM System</h3>
-
-            <p>
-              Modern CRM dashboard with lead management,
-              analytics and automation.
-            </p>
-
-            <a href="portfolio/softwares.html">
-              View Project →
-            </a>
-
+            <p>Modern CRM dashboard with lead management, pipeline analytics and intelligent automation workflows.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">PostgreSQL</span>
+            </div>
+            <a href="portfolio/softwares.html" class="proj-link">View Project →</a>
           </div>
-
         </div>
 
-        <div class="project-card">
-
-          <img src="../assets/portfolio/project3.jpg" alt="Healthcare">
-
+        <!-- Hospital -->
+        <div class="project-card reveal">
+          <div class="project-thumb-img t1">🏥</div>
           <div class="project-info">
-
-            <span>Healthcare</span>
-
+            <span class="proj-cat">Healthcare</span>
             <h3>Hospital Management</h3>
-
-            <p>
-              Complete patient records, appointment booking,
-              and billing management system.
-            </p>
-
-            <a href="portfolio/websites-webapps.html">
-              View Project →
-            </a>
-
+            <p>Complete patient records, appointment booking, and billing management built for busy clinical teams.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Vue.js</span>
+              <span class="proj-tag">Laravel</span>
+              <span class="proj-tag">MySQL</span>
+            </div>
+            <a href="portfolio/websites-webapps.html" class="proj-link">View Project →</a>
           </div>
-
         </div>
 
       </div>
-
     </div>
-
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
-
     <div class="container">
-
       <div class="card text-center">
-
-        <h2>
-
-          Have a Project in Mind?
-
-        </h2>
-
-        <p>
-
-          Let's build something exceptional together.
-
-        </p>
-
-        <a href="contact.html" class="btn btn-primary">
-
-          Start Your Project
-
-        </a>
-
+        <h2>Have a Project in Mind?</h2>
+        <p>Let's build something exceptional together. Our team is ready to bring your idea to life.</p>
+        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
       </div>
-
     </div>
-
   </section>
 
   <footer>
-
-    <!-- SAME FOOTER -->
-
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2>Tectigon</h2>
+          <p>We build reliable software for businesses that need technology they can trust — from mobile apps to
+            enterprise platforms.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="team.html">Team</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <a href="services.html">Web Development</a>
+            <a href="portfolio/android-apps.html">Android Apps</a>
+            <a href="portfolio/ios-apps.html">iOS Apps</a>
+            <a href="portfolio/software-integrations.html">Integrations</a>
+          </div>
+          <div>
+            <h4>Portfolio</h4>
+            <a href="portfolio/websites-webapps.html">Websites</a>
+            <a href="portfolio/android-apps.html">Android</a>
+            <a href="portfolio/ios-apps.html">iOS</a>
+            <a href="portfolio/softwares.html">Software</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Tectigon IT Solutions. All rights reserved.</span>
+        <span>Made with ❤️ in India</span>
+      </div>
+    </div>
   </footer>
 
   <script src="../js/script.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
 </body>
 
 </html>
