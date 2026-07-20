@@ -12,36 +12,36 @@
   <style>
     /* ── Page hero ── */
     .web-hero {
-      padding: 140px 0 90px;
+      padding: 140px090px;
       text-align: center;
     }
 
-    .web-hero h1 {
+    .web-heroh1 {
       font-size: 3.4rem;
       letter-spacing: -1.5px;
       max-width: 700px;
-      margin: 0 auto;
+      margin: 0auto;
     }
 
-    .web-hero p {
+    .web-herop {
       max-width: 560px;
-      margin: 20px auto 0;
+      margin: 20pxauto0;
       color: #555;
       font-size: 1.1rem;
       line-height: 1.75;
     }
 
-    .web-hero .hero-buttons {
+    .web-hero.hero-buttons {
       justify-content: center;
       margin-top: 36px;
     }
 
     /* ── Web stats ── */
     .web-stats {
-      padding: 56px 0;
+      padding: 56px0;
       background: #f8fbff;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1pxsolidvar(--border);
+      border-bottom: 1pxsolidvar(--border);
     }
 
     .stats-grid {
@@ -51,22 +51,22 @@
       background: var(--border);
       border-radius: 16px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1pxsolidvar(--border);
     }
 
     .stat-card {
       background: #fff;
-      padding: 36px 24px;
+      padding: 36px24px;
       text-align: center;
     }
 
-    .stat-card h2 {
+    .stat-cardh2 {
       font-size: 2.6rem;
       color: var(--primary);
       margin-bottom: 6px;
     }
 
-    .stat-card p {
+    .stat-cardp {
       color: #666;
       font-size: .95rem;
       margin: 0;
@@ -88,34 +88,34 @@
       margin-bottom: 12px;
     }
 
-    .section-title h2 {
+    .section-titleh2 {
       font-size: 2.4rem;
       letter-spacing: -1px;
       margin-bottom: 14px;
     }
 
-    .section-title p {
+    .section-titlep {
       color: #666;
       max-width: 560px;
-      margin: 0 auto;
+      margin: 0auto;
       line-height: 1.7;
     }
 
     /* ── Live projects grid ── */
     .live-projects {
-      padding: 100px 0;
+      padding: 100px0;
     }
 
     .live-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
     }
 
     .live-card {
       background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 20px;
+      border: 1pxsolidvar(--border);
+      border-radius: 18px;
       overflow: hidden;
       transition: transform .3s, box-shadow .3s;
       text-decoration: none;
@@ -124,23 +124,38 @@
     }
 
     .live-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 48px rgba(37, 99, 235, .1);
+      transform: translateY(-6px);
+      box-shadow: 020px48pxrgba(37, 99, 235, .1);
     }
 
     .live-thumb {
-      height: 200px;
+      height: 168px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
-      gap: 10px;
+      gap: 8px;
       position: relative;
       overflow: hidden;
+      transition: transform .35sease;
     }
 
-    .live-thumb .site-url {
+    .live-card:hover.live-thumb {
+      transform: scale(1.05);
+    }
+
+    .live-thumb-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .6);
+      font-size: 1.6rem;
+    }
+
+    .live-thumb.site-url {
       font-size: .72rem;
       font-family: monospace;
       font-weight: 700;
@@ -161,7 +176,7 @@
     }
 
     .live-body {
-      padding: 26px;
+      padding: 22px24px24px;
     }
 
     .live-cat {
@@ -172,9 +187,9 @@
       color: var(--primary);
     }
 
-    .live-body h3 {
+    .live-bodyh3 {
       font-size: 1.2rem;
-      margin: 10px 0 8px;
+      margin: 10px08px;
       color: var(--dark);
       display: flex;
       align-items: center;
@@ -190,8 +205,8 @@
       font-weight: 700;
       background: rgba(22, 163, 74, .08);
       color: #16A34A;
-      border: 1px solid rgba(22, 163, 74, .15);
-      padding: 3px 9px;
+      border: 1pxsolidrgba(22, 163, 74, .15);
+      padding: 3px9px;
       border-radius: 100px;
     }
 
@@ -200,10 +215,10 @@
       height: 6px;
       border-radius: 50%;
       background: #16A34A;
-      animation: blink 1.4s infinite;
+      animation: blink1.4sinfinite;
     }
 
-    @keyframes blink {
+    @keyframesblink {
 
       0%,
       100% {
@@ -215,11 +230,11 @@
       }
     }
 
-    .live-body p {
+    .live-bodyp {
       color: #666;
       font-size: .9rem;
       line-height: 1.65;
-      margin: 0 0 18px;
+      margin: 0018px;
     }
 
     .live-tags {
@@ -232,11 +247,11 @@
     .live-tag {
       font-size: .78rem;
       font-weight: 600;
-      padding: 4px 12px;
+      padding: 4px12px;
       border-radius: 100px;
       background: rgba(37, 99, 235, .07);
       color: var(--primary);
-      border: 1px solid rgba(37, 99, 235, .12);
+      border: 1pxsolidrgba(37, 99, 235, .12);
     }
 
     .live-link {
@@ -249,19 +264,19 @@
       transition: gap .2s;
     }
 
-    .live-card:hover .live-link {
+    .live-card:hover.live-link {
       gap: 9px;
     }
 
     /* ── Case study ── */
     .case-study {
-      padding: 100px 0;
+      padding: 100px0;
       background: #f8fbff;
     }
 
     .case-study-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr1fr;
       gap: 72px;
       align-items: center;
       margin-top: 60px;
@@ -275,20 +290,20 @@
       text-transform: uppercase;
       color: var(--primary);
       background: rgba(37, 99, 235, .07);
-      border: 1px solid rgba(37, 99, 235, .12);
-      padding: 5px 14px;
+      border: 1pxsolidrgba(37, 99, 235, .12);
+      padding: 5px14px;
       border-radius: 100px;
       margin-bottom: 20px;
     }
 
-    .case-content h3 {
+    .case-contenth3 {
       font-size: 2.2rem;
       letter-spacing: -.8px;
       margin-bottom: 18px;
       line-height: 1.2;
     }
 
-    .case-content p {
+    .case-contentp {
       color: #666;
       line-height: 1.75;
       margin-bottom: 28px;
@@ -301,7 +316,7 @@
       margin-bottom: 28px;
     }
 
-    .feature-list div {
+    .feature-listdiv {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -317,14 +332,14 @@
       margin-bottom: 28px;
     }
 
-    .tech-stack span {
+    .tech-stackspan {
       font-size: .82rem;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 6px14px;
       border-radius: 100px;
       background: rgba(37, 99, 235, .07);
       color: var(--primary);
-      border: 1px solid rgba(37, 99, 235, .12);
+      border: 1pxsolidrgba(37, 99, 235, .12);
     }
 
     .case-image {
@@ -336,85 +351,30 @@
       align-items: center;
       justify-content: center;
       font-size: 5rem;
-      border: 1px solid var(--border);
+      border: 1pxsolidvar(--border);
     }
 
     /* ── All projects list ── */
     .all-projects {
-      padding: 100px 0;
+      padding: 100px0;
     }
 
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 56px;
-    }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .project-card:nth-child(even) .project-image {
-      order: -1;
-    }
-
-    .project-image {
-      background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
-      border-radius: 20px;
-      height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      border: 1px solid var(--border);
-    }
-
-    .project-image.pi2 {
-      background: linear-gradient(135deg, #F0FDFF, #CFFAFE);
-    }
-
-    .project-image.pi3 {
-      background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
-    }
-
-    .project-content>span {
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-
-    .project-content h3 {
-      font-size: 1.9rem;
-      letter-spacing: -.7px;
-      margin: 12px 0;
-    }
-
-    .project-content p {
-      color: #666;
-      line-height: 1.75;
-      margin-bottom: 20px;
-    }
-
+    /* .project-list / .project-card now come from the shared component in css/style.css — no local override needed. */
     /* ── CTA ── */
     .cta-section {
-      padding: 100px 0;
+      padding: 100px0;
     }
 
-    .cta-section .card {
+    .cta-section.card {
       padding: 70px;
       text-align: center;
     }
 
-    .cta-section h2 {
+    .cta-sectionh2 {
       margin-bottom: 14px;
     }
 
-    .cta-section a {
+    .cta-sectiona {
       margin-top: 32px;
       display: inline-block;
     }
@@ -429,25 +389,57 @@
       font-weight: 500;
       text-decoration: none;
       margin-bottom: 24px;
-      transition: color .2s;
+      transition: color.2s;
     }
 
     .back-link:hover {
       color: var(--primary);
     }
+
+    /* ── Local responsive overrides ── (this page redefines .stats-grid / .case-study-grid / .feature-list unconditionally above, which sits later in the cascade than css/responsive.css and would otherwise cancel its breakpoints) */
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .live-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+      }
+
+      .live-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="progress-bar"></div>
-  <button id="topBtn">↑</button>
-
+  <div class="progress-bar"></div> <button id="topBtn">↑</button>
   <header>
-    <div class="container navbar">
-      <a href="../../index.html" class="logo">
-        <img src="../../assets/logo.jpeg" alt="Tectigon">
-        <span>TECTIGON</span>
-      </a>
+    <div class="container navbar"> <a href="../../index.html" class="logo"> <img src="../../assets/logo.jpeg"
+          alt="Tectigon"> <span>TECTIGON</span> </a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
@@ -455,28 +447,24 @@
         <li><a href="../portfolio.html" class="active">Portfolio</a></li>
         <li><a href="../team.html">Team</a></li>
         <li><a href="../contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="../contact.html" class="btn btn-primary">Start Project</a></li>
       </ul>
-      <div class="nav-btn">
-        <a href="../contact.html" class="btn btn-primary">Start Project</a>
-      </div>
+      <div class="nav-btn"> <a href="../contact.html" class="btn btn-primary">Start Project</a> </div> <button
+        class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"> <span></span> <span></span>
+        <span></span> </button>
     </div>
   </header>
-
   <!-- HERO -->
   <section class="web-hero">
-    <div class="container">
-      <a href="../portfolio.html" class="back-link">← All Portfolio Categories</a>
-      <span class="badge">WEB DEVELOPMENT</span>
+    <div class="container"> <a href="../portfolio.html" class="back-link">← All Portfolio Categories</a> <span
+        class="badge">WEB DEVELOPMENT</span>
       <h1>Websites & Web Applications</h1>
       <p>We design and build high-performance websites, enterprise portals, SaaS platforms, dashboards and custom web
         applications that help businesses scale with confidence.</p>
-      <div class="hero-buttons">
-        <a href="../contact.html" class="btn btn-primary">Start a Project</a>
-        <a href="#live-projects" class="btn btn-outline">View Live Projects</a>
-      </div>
+      <div class="hero-buttons"> <a href="../contact.html" class="btn btn-primary">Start a Project</a> <a
+          href="#live-projects" class="btn btn-outline">View Live Projects</a> </div>
     </div>
   </section>
-
   <!-- STATS -->
   <section class="web-stats">
     <div class="container">
@@ -500,91 +488,64 @@
       </div>
     </div>
   </section>
-
   <!-- LIVE PROJECTS -->
   <section class="live-projects" id="live-projects">
     <div class="container">
-      <div class="section-title reveal">
-        <span>LIVE WEBSITES</span>
+      <div class="section-title reveal"> <span>LIVE WEBSITES</span>
         <h2>Projects You Can Visit Right Now</h2>
         <p>Real websites we've designed and developed — live on the internet for the world to see.</p>
       </div>
       <div class="live-grid">
-
-        <!-- Hello Monday -->
-        <a href="https://www.hellomonday.com" target="_blank" rel="noopener" class="live-card reveal">
-          <div class="live-thumb lt1">
-            🎨
-            <span class="site-url">hellomonday.com</span>
-          </div>
+        <!-- Hello Monday --> <a href="https://www.hellomonday.com" target="_blank" rel="noopener"
+          class="live-card reveal">
+          <div class="live-thumb lt1"> <span class="live-thumb-icon">🎨</span> <span
+              class="site-url">hellomonday.com</span> </div>
           <div class="live-body">
             <div class="live-cat">Creative Studio</div>
             <h3>Hello Monday <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
             <p>A world-class creative studio website for a New York & Copenhagen-based digital agency that handcrafts
               digital products, brands, and immersive experiences for global clients including Google, Netflix, and
               Strava.</p>
-            <div class="live-tags">
-              <span class="live-tag">Web Design</span>
-              <span class="live-tag">Branding</span>
-              <span class="live-tag">Animation</span>
-              <span class="live-tag">3D / WebGL</span>
-            </div>
-            <span class="live-link">Visit Website →</span>
+            <div class="live-tags"> <span class="live-tag">Web Design</span> <span class="live-tag">Branding</span>
+              <span class="live-tag">Animation</span> <span class="live-tag">3D / WebGL</span> </div> <span
+              class="live-link">Visit Website →</span>
           </div>
         </a>
-
-        <!-- Who Is Guilty -->
-        <a href="https://whoisguilty.com" target="_blank" rel="noopener" class="live-card reveal">
-          <div class="live-thumb lt2">
-            ⚖️
-            <span class="site-url">whoisguilty.com</span>
-          </div>
+        <!-- Who Is Guilty --> <a href="https://whoisguilty.com" target="_blank" rel="noopener"
+          class="live-card reveal">
+          <div class="live-thumb lt2"> <span class="live-thumb-icon">⚖️</span> <span
+              class="site-url">whoisguilty.com</span> </div>
           <div class="live-body">
             <div class="live-cat">Interactive Experience</div>
             <h3>Who Is Guilty <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
             <p>An interactive story landing page and structured guide for designers and developers — helping creative
               teams collaborate better, reduce handoff errors, and align on project expectations from day one.</p>
-            <div class="live-tags">
-              <span class="live-tag">Interactive</span>
-              <span class="live-tag">Next.js</span>
-              <span class="live-tag">UI/UX</span>
-              <span class="live-tag">Motion</span>
-            </div>
-            <span class="live-link">Visit Website →</span>
+            <div class="live-tags"> <span class="live-tag">Interactive</span> <span class="live-tag">Next.js</span>
+              <span class="live-tag">UI/UX</span> <span class="live-tag">Motion</span> </div> <span
+              class="live-link">Visit Website →</span>
           </div>
         </a>
-
-        <!-- FlyRemit -->
-        <a href="https://flyremit.com" target="_blank" rel="noopener" class="live-card reveal">
-          <div class="live-thumb lt3">
-            ✈️
-            <span class="site-url">flyremit.com</span>
-          </div>
+        <!-- FlyRemit --> <a href="https://flyremit.com" target="_blank" rel="noopener" class="live-card reveal">
+          <div class="live-thumb lt3"> <span class="live-thumb-icon">✈️</span> <span
+              class="site-url">flyremit.com</span> </div>
           <div class="live-body">
             <div class="live-cat">Fintech Platform</div>
             <h3>FlyRemit <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
             <p>India's first 100% digital outward remittance management platform. Live FX rates, 600+ global partners,
               zero paperwork. Built for travel agents, education payments, visa fees, and MICE industry professionals.
             </p>
-            <div class="live-tags">
-              <span class="live-tag">Fintech</span>
-              <span class="live-tag">React</span>
-              <span class="live-tag">Payment API</span>
-              <span class="live-tag">Live FX</span>
-            </div>
-            <span class="live-link">Visit Website →</span>
+            <div class="live-tags"> <span class="live-tag">Fintech</span> <span class="live-tag">React</span> <span
+                class="live-tag">Payment API</span> <span class="live-tag">Live FX</span> </div> <span
+              class="live-link">Visit Website →</span>
           </div>
         </a>
-
       </div>
     </div>
   </section>
-
   <!-- FEATURED CASE STUDY -->
   <section class="case-study">
     <div class="container">
-      <div class="section-title reveal">
-        <span>FEATURED PROJECT</span>
+      <div class="section-title reveal"> <span>FEATURED PROJECT</span>
         <h2>Employee Management System</h2>
         <p>A complete HRMS solution built to streamline attendance, leave, employee records, payroll insights and
           performance tracking for modern organisations.</p>
@@ -604,74 +565,62 @@
             <div>✔ Admin Dashboard</div>
           </div>
           <div class="tech-stack">
-            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>AWS</span>
-          </div>
-          <a href="../contact.html" class="btn btn-primary">Build Similar Solution</a>
+            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>AWS</span> </div> <a
+            href="../contact.html" class="btn btn-primary">Build Similar Solution</a>
         </div>
         <div class="case-image reveal">🖥️</div>
       </div>
     </div>
   </section>
-
   <!-- ALL PROJECTS -->
   <section class="all-projects" id="projects">
     <div class="container">
-      <div class="section-title reveal">
-        <span>OUR PROJECTS</span>
+      <div class="section-title reveal"> <span>OUR PROJECTS</span>
         <h2>Selected Web Development Projects</h2>
         <p>From enterprise software to customer-facing platforms — these projects demonstrate our expertise in building
           scalable digital products.</p>
       </div>
       <div class="project-list">
-
         <div class="project-card reveal">
           <div class="project-image">🏢</div>
-          <div class="project-content">
-            <span>Enterprise Portal</span>
+          <div class="project-content"> <span>Enterprise Portal</span>
             <h3>Employee Management System</h3>
             <p>Complete HRMS platform with attendance, leave management, analytics, employee dashboard and reports.</p>
-            <div class="tech-stack"><span>React</span><span>Node.js</span><span>MongoDB</span><span>AWS</span></div>
-            <a href="#" class="btn btn-outline">View Case Study</a>
+            <div class="tech-stack"><span>React</span><span>Node.js</span><span>MongoDB</span><span>AWS</span></div> <a
+              href="#" class="btn btn-outline">View Case Study</a>
           </div>
         </div>
-
         <div class="project-card reveal">
-          <div class="project-content">
-            <span>Business Website</span>
+          <div class="project-content"> <span>Business Website</span>
             <h3>Corporate Company Website</h3>
             <p>Modern corporate website designed for branding, lead generation and high performance across devices.</p>
-            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a href="#" class="btn btn-outline">Visit Website</a>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div> <a href="#"
+              class="btn btn-outline">Visit Website</a>
           </div>
           <div class="project-image pi2">🌐</div>
         </div>
-
         <div class="project-card reveal">
           <div class="project-image pi3">📊</div>
-          <div class="project-content">
-            <span>SaaS Platform</span>
+          <div class="project-content"> <span>SaaS Platform</span>
             <h3>Inventory Management Dashboard</h3>
             <p>Cloud-based dashboard with analytics, inventory tracking and reporting — built for warehouse teams.</p>
-            <div class="tech-stack"><span>React</span><span>Express</span><span>PostgreSQL</span></div>
-            <a href="#" class="btn btn-outline">View Project</a>
+            <div class="tech-stack"><span>React</span><span>Express</span><span>PostgreSQL</span></div> <a href="#"
+              class="btn btn-outline">View Project</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
       <div class="card text-center">
         <h2>Need a Website Built?</h2>
-        <p>Our team develops scalable digital products tailored to your business goals.</p>
-        <a href="../contact.html" class="btn btn-primary">Start Your Project</a>
+        <p>Our team develops scalable digital products tailored to your business goals.</p> <a href="../contact.html"
+          class="btn btn-primary">Start Your Project</a>
       </div>
     </div>
   </section>
-
   <footer>
     <div class="container">
       <div class="footer-top">
@@ -681,34 +630,23 @@
         </div>
         <div class="footer-links">
           <div>
-            <h4>Company</h4>
-            <a href="../about.html">About Us</a>
-            <a href="../team.html">Team</a>
-            <a href="../portfolio.html">Portfolio</a>
-            <a href="../contact.html">Contact</a>
+            <h4>Company</h4> <a href="../about.html">About Us</a> <a href="../team.html">Team</a> <a
+              href="../portfolio.html">Portfolio</a> <a href="../contact.html">Contact</a>
           </div>
           <div>
-            <h4>Portfolio</h4>
-            <a href="websites-webapps.html">Websites</a>
-            <a href="android-apps.html">Android</a>
-            <a href="ios-apps.html">iOS</a>
-            <a href="softwares.html">Software</a>
+            <h4>Portfolio</h4> <a href="websites-webapps.html">Websites</a> <a href="android-apps.html">Android</a> <a
+              href="ios-apps.html">iOS</a> <a href="softwares.html">Software</a>
           </div>
           <div>
-            <h4>Services</h4>
-            <a href="../services.html">All Services</a>
-            <a href="software-integrations.html">Integrations</a>
-            <a href="../contact.html">Get a Quote</a>
+            <h4>Services</h4> <a href="../services.html">All Services</a> <a
+              href="software-integrations.html">Integrations</a> <a href="../contact.html">Get a Quote</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 Tectigon IT Solutions. All rights reserved.</span>
-        <span>Made with ❤️ in India</span>
-      </div>
+      <div class="footer-bottom"> <span>© 2026 Tectigon IT Solutions. All rights reserved.</span> <span>Made with ❤️ in
+          India</span> </div>
     </div>
   </footer>
-
   <script src="../../js/script.js"></script>
 </body>
 

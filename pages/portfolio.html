@@ -12,21 +12,21 @@
   <style>
     /* ── Portfolio Hub ── */
     .portfolio-hub {
-      padding: 100px 0;
+      padding: 100px0;
     }
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
       margin-top: 64px;
     }
 
     .portfolio-category {
       background: #fff;
-      padding: 40px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
+      padding: 30px28px;
+      border-radius: 16px;
+      border: 1pxsolidvar(--border);
       transition: transform .3s, box-shadow .3s, border-color .3s;
       display: block;
       text-decoration: none;
@@ -48,7 +48,7 @@
     }
 
     .portfolio-category:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
       border-color: #d0e0ff;
     }
@@ -58,86 +58,116 @@
     }
 
     .portfolio-icon {
-      font-size: 2.4rem;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: rgba(15, 98, 254, .08);
+      font-size: 1.5rem;
       margin-bottom: 18px;
     }
 
-    .portfolio-category h3 {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
+    .portfolio-categoryh3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
       color: var(--dark);
     }
 
-    .portfolio-category p {
+    .portfolio-categoryp {
       color: #666;
-      font-size: .95rem;
-      line-height: 1.65;
+      font-size: .9rem;
+      line-height: 1.6;
       margin: 0;
     }
 
-    .portfolio-category span {
+    .portfolio-categoryspan {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 20px;
+      margin-top: 16px;
       font-weight: 700;
       color: var(--primary);
-      font-size: .9rem;
+      font-size: .88rem;
       transition: gap .2s;
     }
 
-    .portfolio-category:hover span {
+    .portfolio-category:hoverspan {
       gap: 10px;
     }
 
-    .portfolio-category:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      max-width: 500px;
-      margin: 0 auto;
-      width: 100%;
+    @media (max-width: 480px) {
+      .portfolio-category {
+        padding: 24px22px;
+      }
+
+      .portfolio-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+        margin-bottom: 14px;
+      }
+
+      .portfolio-categoryh3 {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .portfolio-category {
+        padding: 20px18px;
+      }
     }
 
     /* ── Featured Projects ── */
     .featured-projects {
-      padding: 100px 0;
+      padding: 100px0;
       background: #f8fbff;
     }
 
-    .projects-grid {
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
       margin-top: 60px;
     }
 
-    .project-card {
+    .showcase-card {
+      display: flex;
+      flex-direction: column;
       background: #fff;
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1pxsolidvar(--border);
       transition: transform .3s, box-shadow .3s;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, .04);
+      box-shadow: 04px24pxrgba(0, 0, 0, .04);
     }
 
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 48px rgba(37, 99, 235, .1);
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 020px48pxrgba(37, 99, 235, .1);
     }
 
     .project-thumb-img {
       width: 100%;
-      height: 200px;
+      height: 176px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       position: relative;
       overflow: hidden;
+      transition: transform .35sease;
     }
 
-    .project-thumb-img .proj-url {
+    .showcase-card:hover.project-thumb-img {
+      transform: scale(1.06);
+    }
+
+    .project-thumb-img.proj-url {
       font-size: .7rem;
       font-weight: 700;
       letter-spacing: .5px;
@@ -166,10 +196,13 @@
     }
 
     .project-info {
-      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px;
     }
 
-    .project-info .proj-cat {
+    .project-info.proj-cat {
       color: var(--primary);
       font-size: .8rem;
       font-weight: 700;
@@ -177,17 +210,21 @@
       text-transform: uppercase;
     }
 
-    .project-info h3 {
-      font-size: 1.2rem;
-      margin: 10px 0 8px;
+    .project-infoh3 {
+      font-size: 1.15rem;
+      margin: 10px08px;
       color: var(--dark);
     }
 
-    .project-info p {
+    .project-infop {
       color: #666;
       font-size: .9rem;
-      line-height: 1.65;
-      margin: 0 0 16px;
+      line-height: 1.6;
+      margin: 0016px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .proj-tags {
@@ -200,11 +237,11 @@
     .proj-tag {
       font-size: .78rem;
       font-weight: 600;
-      padding: 4px 12px;
+      padding: 4px12px;
       border-radius: 100px;
       background: rgba(37, 99, 235, .07);
       color: var(--primary);
-      border: 1px solid rgba(37, 99, 235, .12);
+      border: 1pxsolidrgba(37, 99, 235, .12);
     }
 
     .proj-link {
@@ -216,6 +253,7 @@
       color: var(--primary);
       text-decoration: none;
       transition: gap .2s;
+      margin-top: auto;
     }
 
     .proj-link:hover {
@@ -230,8 +268,8 @@
       font-weight: 700;
       background: rgba(22, 163, 74, .08);
       color: #16A34A;
-      border: 1px solid rgba(22, 163, 74, .15);
-      padding: 3px 10px;
+      border: 1pxsolidrgba(22, 163, 74, .15);
+      padding: 3px10px;
       border-radius: 100px;
       margin-left: 10px;
     }
@@ -241,10 +279,10 @@
       height: 6px;
       border-radius: 50%;
       background: #16A34A;
-      animation: blink 1.4s infinite;
+      animation: blink1.4sinfinite;
     }
 
-    @keyframes blink {
+    @keyframesblink {
 
       0%,
       100% {
@@ -258,23 +296,23 @@
 
     /* ── CTA ── */
     .cta-section {
-      padding: 100px 0;
+      padding: 100px0;
     }
 
-    .cta-section .card {
+    .cta-section.card {
       padding: 70px;
       text-align: center;
     }
 
-    .cta-section h2 {
+    .cta-sectionh2 {
       margin-bottom: 14px;
     }
 
-    .cta-section p {
+    .cta-sectionp {
       margin-bottom: 0;
     }
 
-    .cta-section a {
+    .cta-sectiona {
       margin-top: 32px;
       display: inline-block;
     }
@@ -282,15 +320,10 @@
 </head>
 
 <body>
-  <div class="progress-bar"></div>
-  <button id="topBtn">↑</button>
-
+  <div class="progress-bar"></div> <button id="topBtn">↑</button>
   <header>
-    <div class="container navbar">
-      <a href="../index.html" class="logo">
-        <img src="../assets/logo.jpeg" alt="Tectigon">
-        <span>TECTIGON</span>
-      </a>
+    <div class="container navbar"> <a href="../index.html" class="logo"> <img src="../assets/logo.jpeg" alt="Tectigon">
+        <span>TECTIGON</span> </a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -298,199 +331,147 @@
         <li><a href="portfolio.html" class="active">Portfolio</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html" class="btn btn-primary">Start Project</a></li>
       </ul>
-      <div class="nav-btn">
-        <a href="contact.html" class="btn btn-primary">Start Project</a>
-      </div>
+      <div class="nav-btn"> <a href="contact.html" class="btn btn-primary">Start Project</a> </div> <button
+        class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"> <span></span> <span></span>
+        <span></span> </button>
     </div>
   </header>
-
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <div class="container">
-      <span class="badge">OUR WORK</span>
+    <div class="container"> <span class="badge">OUR WORK</span>
       <h1>Solutions Across Every Platform</h1>
       <p>Explore our work across websites, mobile applications, enterprise software, and intelligent business solutions.
       </p>
     </div>
   </section>
-
   <!-- PORTFOLIO CATEGORIES -->
   <section class="portfolio-hub">
     <div class="container">
-      <div class="section-title reveal">
-        <span>PORTFOLIO CATEGORIES</span>
+      <div class="section-title reveal"> <span>PORTFOLIO CATEGORIES</span>
         <h2>Explore By Expertise</h2>
         <p>Every category contains dedicated projects, technologies, and case studies.</p>
       </div>
-      <div class="portfolio-grid">
-        <a href="portfolio/websites-webapps.html" class="portfolio-category reveal">
+      <div class="portfolio-grid"> <a href="portfolio/websites-webapps.html" class="portfolio-category reveal">
           <div class="portfolio-icon">💻</div>
           <h3>Websites & Web Apps</h3>
           <p>Marketing websites, dashboards, SaaS products, admin panels and enterprise portals built for scale.</p>
           <span>Explore Projects →</span>
-        </a>
-        <a href="portfolio/android-apps.html" class="portfolio-category reveal">
+        </a> <a href="portfolio/android-apps.html" class="portfolio-category reveal">
           <div class="portfolio-icon">📱</div>
           <h3>Android Apps</h3>
-          <p>Native Android applications and business apps — from concept to Play Store release.</p>
-          <span>Explore Projects →</span>
-        </a>
-        <a href="portfolio/ios-apps.html" class="portfolio-category reveal">
+          <p>Native Android applications and business apps — from concept to Play Store release.</p> <span>Explore
+            Projects →</span>
+        </a> <a href="portfolio/ios-apps.html" class="portfolio-category reveal">
           <div class="portfolio-icon">🍎</div>
           <h3>iOS Apps</h3>
           <p>Swift and cross-platform iOS applications designed for App Store approval and long-term support.</p>
           <span>Explore Projects →</span>
-        </a>
-        <a href="portfolio/software-integrations.html" class="portfolio-category reveal">
+        </a> <a href="portfolio/software-integrations.html" class="portfolio-category reveal">
           <div class="portfolio-icon">🔗</div>
           <h3>Software Integrations</h3>
           <p>API integrations, CRM, ERP, and automation workflows that connect your business tools seamlessly.</p>
           <span>Explore Projects →</span>
-        </a>
-        <a href="portfolio/softwares.html" class="portfolio-category reveal">
+        </a> <a href="portfolio/softwares.html" class="portfolio-category reveal">
           <div class="portfolio-icon">⚙️</div>
           <h3>Custom Softwares</h3>
           <p>Desktop software, management systems, and automation tools engineered around your exact workflow.</p>
           <span>Explore Projects →</span>
-        </a>
-      </div>
+        </a> </div>
     </div>
   </section>
-
   <!-- FEATURED PROJECTS -->
   <section class="featured-projects">
     <div class="container">
-      <div class="section-title reveal">
-        <span>FEATURED PROJECTS</span>
+      <div class="section-title reveal"> <span>FEATURED PROJECTS</span>
         <h2>Some of Our Best Work</h2>
         <p>A selection of live websites, enterprise platforms, and digital products we've designed and built.</p>
       </div>
-      <div class="projects-grid">
-
+      <div class="showcase-grid">
         <!-- Hello Monday -->
-        <div class="project-card reveal">
-          <div class="project-thumb-img t1">
-            🎨
-            <span class="proj-url">hellomonday.com</span>
-          </div>
-          <div class="project-info">
-            <span class="proj-cat">Creative Studio Website</span>
+        <div class="showcase-card reveal">
+          <div class="project-thumb-img t1"> 🎨 <span class="proj-url">hellomonday.com</span> </div>
+          <div class="project-info"> <span class="proj-cat">Creative Studio Website</span>
             <h3>Hello Monday <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
             <p>A stunning creative studio website for a New York & Copenhagen-based digital agency — handcrafted digital
               products, brands, and experiences.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">Web Design</span>
-              <span class="proj-tag">Branding</span>
+            <div class="proj-tags"> <span class="proj-tag">Web Design</span> <span class="proj-tag">Branding</span>
               <span class="proj-tag">Animation</span>
-            </div>
-            <a href="https://www.hellomonday.com" target="_blank" rel="noopener" class="proj-link">Visit Website →</a>
+            </div> <a href="https://www.hellomonday.com" target="_blank" rel="noopener" class="proj-link">Visit Website
+              →</a>
           </div>
         </div>
-
         <!-- Who Is Guilty -->
-        <div class="project-card reveal">
-          <div class="project-thumb-img t2">
-            ⚖️
-            <span class="proj-url">whoisguilty.com</span>
-          </div>
-          <div class="project-info">
-            <span class="proj-cat">Interactive Web Experience</span>
+        <div class="showcase-card reveal">
+          <div class="project-thumb-img t2"> ⚖️ <span class="proj-url">whoisguilty.com</span> </div>
+          <div class="project-info"> <span class="proj-cat">Interactive Web Experience</span>
             <h3>Who Is Guilty <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
             <p>An interactive story landing page and guide for designers and developers to collaborate better, reduce
               errors, and catch the same creative vibe.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">Interactive</span>
-              <span class="proj-tag">UI/UX</span>
-              <span class="proj-tag">Next.js</span>
-            </div>
-            <a href="https://whoisguilty.com" target="_blank" rel="noopener" class="proj-link">Visit Website →</a>
+            <div class="proj-tags"> <span class="proj-tag">Interactive</span> <span class="proj-tag">UI/UX</span> <span
+                class="proj-tag">Next.js</span> </div> <a href="https://whoisguilty.com" target="_blank" rel="noopener"
+              class="proj-link">Visit Website →</a>
           </div>
         </div>
-
         <!-- FlyRemit -->
-        <div class="project-card reveal">
-          <div class="project-thumb-img t3">
-            ✈️
-            <span class="proj-url">flyremit.com</span>
-          </div>
-          <div class="project-info">
-            <span class="proj-cat">Fintech Platform</span>
+        <div class="showcase-card reveal">
+          <div class="project-thumb-img t3"> ✈️ <span class="proj-url">flyremit.com</span> </div>
+          <div class="project-info"> <span class="proj-cat">Fintech Platform</span>
             <h3>FlyRemit <span class="live-badge"><span class="live-dot"></span>Live</span></h3>
             <p>India's first 100% digital outward remittance platform — live FX rates, 600+ global partners, zero
               paperwork. Built for tour cost, education & MICE.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">Fintech</span>
-              <span class="proj-tag">React</span>
-              <span class="proj-tag">Payment API</span>
-            </div>
-            <a href="https://flyremit.com" target="_blank" rel="noopener" class="proj-link">Visit Website →</a>
+            <div class="proj-tags"> <span class="proj-tag">Fintech</span> <span class="proj-tag">React</span> <span
+                class="proj-tag">Payment API</span> </div> <a href="https://flyremit.com" target="_blank" rel="noopener"
+              class="proj-link">Visit Website →</a>
           </div>
         </div>
-
         <!-- Employee Portal -->
-        <div class="project-card reveal">
+        <div class="showcase-card reveal">
           <div class="project-thumb-img t4">🖥️</div>
-          <div class="project-info">
-            <span class="proj-cat">Enterprise Software</span>
+          <div class="project-info"> <span class="proj-cat">Enterprise Software</span>
             <h3>Employee Management Portal</h3>
             <p>HRMS platform with attendance tracking, leave management, analytics and reporting for 500+ employees.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">React</span>
-              <span class="proj-tag">Node.js</span>
-              <span class="proj-tag">MongoDB</span>
-            </div>
-            <a href="portfolio/websites-webapps.html" class="proj-link">View Case Study →</a>
+            <div class="proj-tags"> <span class="proj-tag">React</span> <span class="proj-tag">Node.js</span> <span
+                class="proj-tag">MongoDB</span> </div> <a href="portfolio/websites-webapps.html" class="proj-link">View
+              Case Study →</a>
           </div>
         </div>
-
         <!-- CRM -->
-        <div class="project-card reveal">
+        <div class="showcase-card reveal">
           <div class="project-thumb-img t5">📊</div>
-          <div class="project-info">
-            <span class="proj-cat">CRM Dashboard</span>
+          <div class="project-info"> <span class="proj-cat">CRM Dashboard</span>
             <h3>Sales & CRM System</h3>
             <p>Modern CRM dashboard with lead management, pipeline analytics and intelligent automation workflows.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">React</span>
-              <span class="proj-tag">Python</span>
-              <span class="proj-tag">PostgreSQL</span>
-            </div>
-            <a href="portfolio/softwares.html" class="proj-link">View Project →</a>
+            <div class="proj-tags"> <span class="proj-tag">React</span> <span class="proj-tag">Python</span> <span
+                class="proj-tag">PostgreSQL</span> </div> <a href="portfolio/softwares.html" class="proj-link">View
+              Project →</a>
           </div>
         </div>
-
         <!-- Hospital -->
-        <div class="project-card reveal">
+        <div class="showcase-card reveal">
           <div class="project-thumb-img t1">🏥</div>
-          <div class="project-info">
-            <span class="proj-cat">Healthcare</span>
+          <div class="project-info"> <span class="proj-cat">Healthcare</span>
             <h3>Hospital Management</h3>
             <p>Complete patient records, appointment booking, and billing management built for busy clinical teams.</p>
-            <div class="proj-tags">
-              <span class="proj-tag">Vue.js</span>
-              <span class="proj-tag">Laravel</span>
-              <span class="proj-tag">MySQL</span>
-            </div>
-            <a href="portfolio/websites-webapps.html" class="proj-link">View Project →</a>
+            <div class="proj-tags"> <span class="proj-tag">Vue.js</span> <span class="proj-tag">Laravel</span> <span
+                class="proj-tag">MySQL</span> </div> <a href="portfolio/websites-webapps.html" class="proj-link">View
+              Project →</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
       <div class="card text-center">
         <h2>Have a Project in Mind?</h2>
-        <p>Let's build something exceptional together. Our team is ready to bring your idea to life.</p>
-        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        <p>Let's build something exceptional together. Our team is ready to bring your idea to life.</p> <a
+          href="contact.html" class="btn btn-primary">Start Your Project</a>
       </div>
     </div>
   </section>
-
   <footer>
     <div class="container">
       <div class="footer-top">
@@ -501,35 +482,25 @@
         </div>
         <div class="footer-links">
           <div>
-            <h4>Company</h4>
-            <a href="about.html">About Us</a>
-            <a href="team.html">Team</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>
+            <h4>Company</h4> <a href="about.html">About Us</a> <a href="team.html">Team</a> <a
+              href="portfolio.html">Portfolio</a> <a href="contact.html">Contact</a>
           </div>
           <div>
-            <h4>Services</h4>
-            <a href="services.html">Web Development</a>
-            <a href="portfolio/android-apps.html">Android Apps</a>
-            <a href="portfolio/ios-apps.html">iOS Apps</a>
-            <a href="portfolio/software-integrations.html">Integrations</a>
+            <h4>Services</h4> <a href="services.html">Web Development</a> <a href="portfolio/android-apps.html">Android
+              Apps</a> <a href="portfolio/ios-apps.html">iOS Apps</a> <a
+              href="portfolio/software-integrations.html">Integrations</a>
           </div>
           <div>
-            <h4>Portfolio</h4>
-            <a href="portfolio/websites-webapps.html">Websites</a>
-            <a href="portfolio/android-apps.html">Android</a>
-            <a href="portfolio/ios-apps.html">iOS</a>
-            <a href="portfolio/softwares.html">Software</a>
+            <h4>Portfolio</h4> <a href="portfolio/websites-webapps.html">Websites</a> <a
+              href="portfolio/android-apps.html">Android</a> <a href="portfolio/ios-apps.html">iOS</a> <a
+              href="portfolio/softwares.html">Software</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 Tectigon IT Solutions. All rights reserved.</span>
-        <span>Made with ❤️ in India</span>
-      </div>
+      <div class="footer-bottom"> <span>© 2026 Tectigon IT Solutions. All rights reserved.</span> <span>Made with ❤️ in
+          India</span> </div>
     </div>
   </footer>
-
   <script src="../js/script.js"></script>
 </body>
 
